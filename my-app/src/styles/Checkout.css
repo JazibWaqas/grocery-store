@@ -96,14 +96,64 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .payment-option:hover {
   border-color: #4CAF50;
+  background-color: #f8f9fa;
 }
 
 .payment-option input {
   margin-right: 0.5rem;
+}
+
+.card-details {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-details .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.card-details .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.card-details input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.card-details input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.card-details .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .order-summary {

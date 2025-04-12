@@ -59,7 +59,7 @@ const CartPage = () => {
                             {item.name}
                           </div>
                         </td>
-                        <td>${item.price.toFixed(2)}</td>
+                        <td>Rs. {item.price}</td>
                         <td>
                           <div className="d-flex align-items-center">
                             <Button 
@@ -80,7 +80,7 @@ const CartPage = () => {
                             </Button>
                           </div>
                         </td>
-                        <td>${(item.price * item.quantity).toFixed(2)}</td>
+                        <td>Rs. {(item.price * item.quantity)}</td>
                         <td>
                           <Button 
                             variant="danger" 
@@ -107,16 +107,16 @@ const CartPage = () => {
             <Card.Body>
               <div className="d-flex justify-content-between mb-2">
                 <span>Subtotal:</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>Rs. {subtotal}</span>
               </div>
               <div className="d-flex justify-content-between mb-2">
                 <span>Tax (10%):</span>
-                <span>${tax.toFixed(2)}</span>
+                <span>Rs. {tax}</span>
               </div>
               <hr />
               <div className="d-flex justify-content-between mb-3">
                 <strong>Total:</strong>
-                <strong>${total.toFixed(2)}</strong>
+                <strong>Rs. {total}</strong>
               </div>
               <Button 
                 variant="success" 

@@ -10,45 +10,238 @@ const HomePage = () => {
   const [showToast, setShowToast] = useState(false);
   const { addToCart } = useCart();
 
-  // Sample product data (later this will come from an API/backend)
+  // Updated product data with correct categories and names
   const products = [
+    // Fruits & Vegetables
     {
       id: 1,
-      name: 'Fresh Milk',
-      price: 2.99,
-      category: 'Dairy',
-      image: 'https://via.placeholder.com/150',
-      description: '1 Liter',
-      stock: 10
-    },
-    {
-      id: 2,
-      name: 'Whole Wheat Bread',
-      price: 1.99,
-      category: 'Bakery',
-      image: 'https://via.placeholder.com/150',
-      description: '400g',
+      name: 'Mango',
+      price: 250, // PKR per kg
+      category: 'Fruits & Vegetables',
+      image: '../pictures/Mango.jpeg',
+      description: 'Fresh Mango',
       stock: 15
     },
     {
-      id: 3,
-      name: 'Fresh Apples',
-      price: 3.99,
+      id: 2,
+      name: 'Strawberry',
+      price: 400, // PKR per kg
       category: 'Fruits & Vegetables',
-      image: 'https://via.placeholder.com/150',
-      description: '1kg',
+      image: '../pictures/strawberry.jpeg',
+      description: 'Fresh Strawberries',
+      stock: 10
+    },
+    {
+      id: 3,
+      name: 'Tomato',
+      price: 120, // PKR per kg
+      category: 'Fruits & Vegetables',
+      image: '../pictures/tomato.jpeg',
+      description: 'Fresh Tomatoes',
       stock: 20
     },
     {
       id: 4,
-      name: 'Orange Juice',
-      price: 4.99,
-      category: 'Beverages',
-      image: 'https://via.placeholder.com/150',
-      description: '2 Liters',
+      name: 'Onion',
+      price: 80, // PKR per kg
+      category: 'Fruits & Vegetables',
+      image: '../pictures/onion.jpeg',
+      description: 'Fresh Onions',
+      stock: 25
+    },
+    {
+      id: 5,
+      name: 'Potato',
+      price: 100, // PKR per kg
+      category: 'Fruits & Vegetables',
+      image: '../pictures/potato.jpeg',
+      description: 'Fresh Potatoes',
+      stock: 30
+    },
+    {
+      id: 6,
+      name: 'Apples',
+      price: 300, // PKR per kg
+      category: 'Fruits & Vegetables',
+      image: '../pictures/apples.jpg',
+      description: 'Fresh Apples',
+      stock: 18
+    },
+    {
+      id: 7,
+      name: 'Banana',
+      price: 150, // PKR per dozen
+      category: 'Fruits & Vegetables',
+      image: '../pictures/banana.jpeg',
+      description: 'Fresh Bananas',
+      stock: 22
+    },
+    {
+      id: 8,
+      name: 'Bottle Gourd',
+      price: 90, // PKR per kg
+      category: 'Fruits & Vegetables',
+      image: '../pictures/BottleGourd.jpeg',
+      description: 'Fresh Bottle Gourd',
+      stock: 12
+    },
+    {
+      id: 9,
+      name: 'Carrot',
+      price: 110, // PKR per kg
+      category: 'Fruits & Vegetables',
+      image: '../pictures/Carrot.jpeg',
+      description: 'Fresh Carrots',
+      stock: 20
+    },
+    // Dairy
+    {
+      id: 10,
+      name: 'Milk',
+      price: 180, // PKR per liter
+      category: 'Dairy',
+      image: '../pictures/Milk.jpg',
+      description: 'Fresh Milk 1.5L',
+      stock: 15
+    },
+    {
+      id: 11,
+      name: 'Cheese',
+      price: 450, // PKR per 250g
+      category: 'Dairy',
+      image: '../pictures/cheese.jpg',
+      description: 'Cheddar Cheese 10 Slices',
       stock: 8
     },
-    // Add more products as needed
+    {
+      id: 12,
+      name: 'Butter',
+      price: 350, // PKR per 250g
+      category: 'Dairy',
+      image: '../pictures/Butter.jpeg',
+      description: 'Butter 250g',
+      stock: 10
+    },
+    {
+      id: 13,
+      name: 'Cream',
+      price: 250, // PKR per 200ml
+      category: 'Dairy',
+      image: '../pictures/Cream.jpeg',
+      description: 'Fresh Cream 250g',
+      stock: 12
+    },
+    // Bakery
+    {
+      id: 14,
+      name: 'Bread',
+      price: 120, // PKR per loaf
+      category: 'Bakery',
+      image: '../pictures/Bread.jpg',
+      description: 'Whole Wheat Bread',
+      stock: 20
+    },
+    {
+      id: 15,
+      name: 'Eggs',
+      price: 300, // PKR per dozen
+      category: 'Bakery',
+      image: '../pictures/Eggs.jpg',
+      description: 'Fresh Eggs (12)',
+      stock: 15
+    },
+    {
+      id: 16,
+      name: 'Bun',
+      price: 50, // PKR for 4 buns
+      category: 'Bakery',
+      image: '../pictures/Bun.jpeg',
+      description: 'Fresh Bun (1)',
+      stock: 25
+    },
+    {
+      id: 17,
+      name: 'Pastry',
+      price: 150, // PKR per piece
+      category: 'Bakery',
+      image: '../pictures/Pastry.jpeg',
+      description: 'Fresh Pastry',
+      stock: 10
+    },
+    // Beverages
+    {
+      id: 18,
+      name: 'Water',
+      price: 80, // PKR per 1.5L
+      category: 'Beverages',
+      image: '../pictures/water.jpeg',
+      description: 'Mineral Water 500ml',
+      stock: 30
+    },
+    {
+      id: 19,
+      name: 'Soft Drink',
+      price: 150, // PKR per 2L
+      category: 'Beverages',
+      image: '../pictures/Softdrink.jpeg',
+      description: 'Cola 345ml',
+      stock: 20
+    },
+    {
+      id: 20,
+      name: 'Juice',
+      price: 250, // PKR per liter
+      category: 'Beverages',
+      image: '../pictures/juice.jpeg',
+      description: 'Orange Juice 350ml',
+      stock: 15
+    },
+    // Snacks
+    {
+      id: 21,
+      name: 'Biscuit',
+      price: 100, // PKR per pack
+      category: 'Snacks',
+      image: '../pictures/Biscuit.jpeg',
+      description: 'Assorted Biscuits',
+      stock: 25
+    },
+    {
+      id: 22,
+      name: 'Chips',
+      price: 120, // PKR per 150g
+      category: 'Snacks',
+      image: '../pictures/Chips.jpeg',
+      description: 'Potato Chips (1 Packet)',
+      stock: 20
+    },
+    {
+      id: 23,
+      name: 'Chips',
+      price: 120, // PKR per 150g
+      category: 'Snacks',
+      image: '../pictures/Chips2.jpeg',
+      description: 'Assorted Chips (1 Packet)',
+      stock: 18
+    },
+    {
+      id: 24,
+      name: 'Jelly',
+      price: 150, // PKR per 200g
+      category: 'Snacks',
+      image: '../pictures/Jelly.jpeg',
+      description: 'Fruit Jelly 200g',
+      stock: 15
+    },
+    {
+      id: 25,
+      name: 'Slanty',
+      price: 120, // PKR per 150g
+      category: 'Snacks',
+      image: '../pictures/slantychips.jpeg',
+      description: 'Slanty Chips (1 Packet)',
+      stock: 20
+    }
   ];
 
   const categories = [
@@ -57,8 +250,7 @@ const HomePage = () => {
     'Dairy',
     'Bakery',
     'Beverages',
-    'Snacks',
-    'Household'
+    'Snacks'
   ];
 
   const handleAddToCart = (product) => {
@@ -138,6 +330,7 @@ const HomePage = () => {
                       variant="top" 
                       src={product.image}
                       className="product-image"
+                      alt={product.name}
                     />
                     <Button 
                       variant="light" 
@@ -154,7 +347,7 @@ const HomePage = () => {
                     </Card.Text>
                     <div className="mt-auto">
                       <div className="d-flex justify-content-between align-items-center">
-                        <h5 className="mb-0 product-price">${product.price}</h5>
+                        <h5 className="mb-0 product-price">Rs. {product.price}</h5>
                         <Button 
                           variant="primary"
                           className="add-to-cart-btn"
@@ -165,9 +358,6 @@ const HomePage = () => {
                           Add to Cart
                         </Button>
                       </div>
-                      <small className="text-muted mt-2 d-block">
-                        {product.stock > 0 ? `In stock (${product.stock})` : 'Out of stock'}
-                      </small>
                     </div>
                   </Card.Body>
                 </Card>

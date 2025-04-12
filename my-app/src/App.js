@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import HomePage from './pages/HomePage';
 import CartPage from './pages/CartPage';
 import Checkout from './pages/Checkout';
+import OrderConfirmation from './pages/OrderConfirmation';
 import NavigationBar from './components/Navbar'; // Added this import
 import Profile from './pages/Profile';
 import { CartProvider } from './context/CartContext';
@@ -22,6 +23,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </CartProvider>
