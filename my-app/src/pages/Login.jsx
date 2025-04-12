@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     // Add login logic here
     console.log('Login data:', formData);
-    navigate('/dashboard'); // Navigate to dashboard after login
+    navigate('/home'); // Navigate to home page after login
   };
 
   return (
