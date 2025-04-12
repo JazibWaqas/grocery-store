@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Container, Badge } from 'react-bootstrap';
-import { FaShoppingCart, FaUser } from 'react-icons/fa';
+import { FaShoppingCart, FaUser, FaCreditCard } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const NavigationBar = () => {
@@ -16,6 +16,10 @@ const NavigationBar = () => {
               <FaShoppingCart className="me-1" />
               Cart
               <Badge bg="primary" className="ms-1">0</Badge>
+            </Nav.Link>
+            <Nav.Link as={Link} to="/checkout">
+              <FaCreditCard className="me-1" />
+              Checkout
             </Nav.Link>
             <Nav.Link as={Link} to="/profile">
               <FaUser className="me-1" />
