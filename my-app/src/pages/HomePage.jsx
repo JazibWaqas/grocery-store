@@ -100,8 +100,8 @@ const HomePage = () => {
       name: 'Milk',
       price: 180, // PKR per liter
       category: 'Dairy',
-      image: '../pictures/Milk.jpg',
-      description: 'Fresh Milk 1.5L',
+      image: '../pictures/milk.jpeg',
+      description: 'Fresh Milk',
       stock: 15
     },
     {
@@ -109,8 +109,8 @@ const HomePage = () => {
       name: 'Cheese',
       price: 450, // PKR per 250g
       category: 'Dairy',
-      image: '../pictures/cheese.jpg',
-      description: 'Cheddar Cheese 10 Slices',
+      image: '../pictures/cheese.jpeg',
+      description: 'Cheddar Cheese',
       stock: 8
     },
     {
@@ -118,8 +118,8 @@ const HomePage = () => {
       name: 'Butter',
       price: 350, // PKR per 250g
       category: 'Dairy',
-      image: '../pictures/Butter.jpeg',
-      description: 'Butter 250g',
+      image: '../pictures/butter.jpeg',
+      description: 'Fresh Butter',
       stock: 10
     },
     {
@@ -127,8 +127,8 @@ const HomePage = () => {
       name: 'Cream',
       price: 250, // PKR per 200ml
       category: 'Dairy',
-      image: '../pictures/Cream.jpeg',
-      description: 'Fresh Cream 250g',
+      image: '../pictures/cream.jpeg',
+      description: 'Fresh Cream',
       stock: 12
     },
     // Bakery
@@ -138,7 +138,7 @@ const HomePage = () => {
       price: 120, // PKR per loaf
       category: 'Bakery',
       image: '../pictures/Bread.jpg',
-      description: 'Whole Wheat Bread',
+      description: 'Fresh Bread',
       stock: 20
     },
     {
@@ -146,17 +146,17 @@ const HomePage = () => {
       name: 'Eggs',
       price: 300, // PKR per dozen
       category: 'Bakery',
-      image: '../pictures/Eggs.jpg',
-      description: 'Fresh Eggs (12)',
+      image: '../pictures/eggs.jpeg',
+      description: 'Fresh Eggs',
       stock: 15
     },
     {
       id: 16,
       name: 'Bun',
-      price: 50, // PKR for 4 buns
+      price: 50, // PKR per piece
       category: 'Bakery',
-      image: '../pictures/Bun.jpeg',
-      description: 'Fresh Bun (1)',
+      image: '../pictures/bun.jpeg',
+      description: 'Fresh Buns',
       stock: 25
     },
     {
@@ -164,7 +164,7 @@ const HomePage = () => {
       name: 'Pastry',
       price: 150, // PKR per piece
       category: 'Bakery',
-      image: '../pictures/Pastry.jpeg',
+      image: '../pictures/pastry.jpeg',
       description: 'Fresh Pastry',
       stock: 10
     },
@@ -175,7 +175,7 @@ const HomePage = () => {
       price: 80, // PKR per 1.5L
       category: 'Beverages',
       image: '../pictures/water.jpeg',
-      description: 'Mineral Water 500ml',
+      description: 'Mineral Water',
       stock: 30
     },
     {
@@ -184,7 +184,7 @@ const HomePage = () => {
       price: 150, // PKR per 2L
       category: 'Beverages',
       image: '../pictures/Softdrink.jpeg',
-      description: 'Cola 345ml',
+      description: 'Carbonated Drink',
       stock: 20
     },
     {
@@ -193,7 +193,7 @@ const HomePage = () => {
       price: 250, // PKR per liter
       category: 'Beverages',
       image: '../pictures/juice.jpeg',
-      description: 'Orange Juice 350ml',
+      description: 'Fresh Juice',
       stock: 15
     },
     // Snacks
@@ -202,7 +202,7 @@ const HomePage = () => {
       name: 'Biscuit',
       price: 100, // PKR per pack
       category: 'Snacks',
-      image: '../pictures/Biscuit.jpeg',
+      image: '../pictures/biscuit.jpeg',
       description: 'Assorted Biscuits',
       stock: 25
     },
@@ -211,35 +211,35 @@ const HomePage = () => {
       name: 'Chips',
       price: 120, // PKR per 150g
       category: 'Snacks',
-      image: '../pictures/Chips.jpeg',
-      description: 'Potato Chips (1 Packet)',
+      image: '../pictures/chips.jpeg',
+      description: 'Potato Chips',
       stock: 20
     },
     {
       id: 23,
-      name: 'Chips',
+      name: 'Chips2',
       price: 120, // PKR per 150g
       category: 'Snacks',
-      image: '../pictures/Chips2.jpeg',
-      description: 'Assorted Chips (1 Packet)',
+      image: '../pictures/chips2.jpeg',
+      description: 'Assorted Chips',
       stock: 18
     },
     {
       id: 24,
       name: 'Jelly',
-      price: 150, // PKR per 200g
+      price: 150, // PKR per pack
       category: 'Snacks',
-      image: '../pictures/Jelly.jpeg',
-      description: 'Fruit Jelly 200g',
+      image: '../pictures/jelly.jpeg',
+      description: 'Fruit Jelly',
       stock: 15
     },
     {
       id: 25,
       name: 'Slanty',
-      price: 120, // PKR per 150g
+      price: 100, // PKR per pack
       category: 'Snacks',
       image: '../pictures/slantychips.jpeg',
-      description: 'Slanty Chips (1 Packet)',
+      description: 'Slanty Chips',
       stock: 20
     }
   ];
