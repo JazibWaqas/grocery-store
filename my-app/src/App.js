@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import CartPage from './pages/CartPage';
 import Checkout from './pages/Checkout';
 import NavigationBar from './components/Navbar'; // Added this import
+import Profile from './pages/Profile';
 import { CartProvider } from './context/CartContext';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </CartProvider>
     </Router>
