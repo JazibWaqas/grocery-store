@@ -100,7 +100,7 @@ const HomePage = () => {
       name: 'Milk',
       price: 180, // PKR per liter
       category: 'Dairy',
-      image: '../pictures/milk.jpeg',
+      image: '../pictures/Milk.jpg',
       description: 'Fresh Milk',
       stock: 15
     },
@@ -109,7 +109,7 @@ const HomePage = () => {
       name: 'Cheese',
       price: 450, // PKR per 250g
       category: 'Dairy',
-      image: '../pictures/cheese.jpeg',
+      image: '../pictures/Cheese.jpg',
       description: 'Cheddar Cheese',
       stock: 8
     },
@@ -146,7 +146,7 @@ const HomePage = () => {
       name: 'Eggs',
       price: 300, // PKR per dozen
       category: 'Bakery',
-      image: '../pictures/eggs.jpeg',
+      image: '../pictures/Eggs.jpg',
       description: 'Fresh Eggs',
       stock: 15
     },
