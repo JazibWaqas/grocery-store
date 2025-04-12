@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import HomePage from './pages/HomePage';
-import Checkout from './pages/Checkout';
 import CartPage from './pages/CartPage';
-import NavigationBar from './components/Navbar';
+import Checkout from './pages/Checkout';
+import NavigationBar from './components/Navbar'; // Added this import
 import { CartProvider } from './context/CartContext';
 
 function App() {

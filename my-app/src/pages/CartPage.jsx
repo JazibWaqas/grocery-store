@@ -9,6 +9,12 @@ const CartPage = () => {
   const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
   const { subtotal, tax, total } = getCartTotal();
 
+  const handleCheckout = () => {
+    if (cartItems.length > 0) {
+      navigate('/checkout');
+    }
+  };
+
   return (
     <Container className="py-4">
       <Button 
@@ -60,6 +66,7 @@ const CartPage = () => {
                               variant="outline-secondary" 
                               size="sm"
                               onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              disabled={item.quantity <= 1}
                             >
                               -
                             </Button>
@@ -111,7 +118,12 @@ const CartPage = () => {
                 <strong>Total:</strong>
                 <strong>${total.toFixed(2)}</strong>
               </div>
-              <Button variant="success" className="w-100">
+              <Button 
+                variant="success" 
+                className="w-100"
+                onClick={handleCheckout}
+                disabled={cartItems.length === 0}
+              >
                 Proceed to Checkout
               </Button>
             </Card.Body>

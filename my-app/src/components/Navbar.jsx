@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Container, Badge } from 'react-bootstrap';
-import { FaShoppingCart, FaUser, FaCreditCard } from 'react-icons/fa';
+import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
@@ -22,10 +22,6 @@ const NavigationBar = () => {
               {itemsCount > 0 && (
                 <Badge bg="primary" className="ms-1">{itemsCount}</Badge>
               )}
-            </Nav.Link>
-            <Nav.Link as={Link} to="/checkout">
-              <FaCreditCard className="me-1" />
-              Checkout
             </Nav.Link>
             <Nav.Link as={Link} to="/profile">
               <FaUser className="me-1" />
