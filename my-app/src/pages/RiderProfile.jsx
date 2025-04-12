@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Card, Form, Button, Table } from 'react-bootstrap';
-import { FaUser, FaEnvelope, FaPhone, FaIdCard, FaMotorcycle, FaEdit, FaSave } from 'react-icons/fa';
+import { Container, Card, Form, Button, Table, Badge } from 'react-bootstrap';
+import { FaUser, FaEnvelope, FaPhone, FaIdCard, FaMotorcycle, FaEdit, FaSave, FaMapMarkerAlt } from 'react-icons/fa';
 import '../styles/RiderProfile.css';
 
 const RiderProfile = () => {
@@ -20,11 +20,32 @@ const RiderProfile = () => {
     numberPlate: false
   });
 
-  // Sample orders data - replace with actual data from your backend
-  const [orders] = useState([
-    { id: 1, customer: 'John Doe', address: '123 Main St', amount: '$50.00', status: 'Pending' },
-    { id: 2, customer: 'Jane Smith', address: '456 Oak Ave', amount: '$75.00', status: 'In Progress' },
-    { id: 3, customer: 'Bob Johnson', address: '789 Pine Rd', amount: '$30.00', status: 'Delivered' }
+  // Sample orders data with updated structure
+  const [orders, setOrders] = useState([
+    {
+      id: 1,
+      customer: 'John Doe',
+      address: '123 Main St, City',
+      items: ['Milk', 'Bread', 'Eggs'],
+      total: 25.99,
+      status: 'pending'
+    },
+    {
+      id: 2,
+      customer: 'Jane Smith',
+      address: '456 Oak Ave, Town',
+      items: ['Fruits', 'Vegetables'],
+      total: 32.50,
+      status: 'in-progress'
+    },
+    {
+      id: 3,
+      customer: 'Mike Johnson',
+      address: '789 Pine Rd, Village',
+      items: ['Meat', 'Fish', 'Rice'],
+      total: 45.75,
+      status: 'completed'
+    }
   ]);
 
   const handleEdit = (field) => {
@@ -54,6 +75,25 @@ const RiderProfile = () => {
         ...prev,
         [field]: value
       }));
+    }
+  };
+
+  const handleStatusUpdate = (orderId, newStatus) => {
+    setOrders(orders.map(order =>
+      order.id === orderId ? { ...order, status: newStatus } : order
+    ));
+  };
+
+  const getStatusBadge = (status) => {
+    switch (status) {
+      case 'pending':
+        return <Badge bg="warning">Pending</Badge>;
+      case 'in-progress':
+        return <Badge bg="primary">In Progress</Badge>;
+      case 'completed':
+        return <Badge bg="success">Completed</Badge>;
+      default:
+        return <Badge bg="secondary">Unknown</Badge>;
     }
   };
 
@@ -130,38 +170,49 @@ const RiderProfile = () => {
 
       <section className="rider-orders-section">
         <h3 className="rider-section-title mb-4">Delivery Orders</h3>
-        <Table striped hover responsive>
+        <Table responsive>
           <thead>
             <tr>
               <th>Order ID</th>
               <th>Customer</th>
-              <th>Delivery Address</th>
-              <th>Amount</th>
+              <th>Address</th>
+              <th>Items</th>
+              <th>Total</th>
               <th>Status</th>
-              <th>Action</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {orders.map(order => (
               <tr key={order.id}>
-                <td>{order.id}</td>
+                <td>#{order.id}</td>
                 <td>{order.customer}</td>
-                <td>{order.address}</td>
-                <td>{order.amount}</td>
                 <td>
-                  <span className={badge ${order.status === 'Delivered' ? 'rider-badge-success' : order.status === 'In Progress' ? 'rider-badge-warning' : 'rider-badge-secondary'}}>
-                    {order.status}
-                  </span>
+                  <FaMapMarkerAlt className="me-2" />
+                  {order.address}
                 </td>
+                <td>{order.items.join(', ')}</td>
+                <td>${order.total.toFixed(2)}</td>
+                <td>{getStatusBadge(order.status)}</td>
                 <td>
-                  <Button 
-                    variant="primary" 
-                    size="sm"
-                    className="rider-action-button"
-                    disabled={order.status === 'Delivered'}
-                  >
-                    {order.status === 'Pending' ? 'Start Delivery' : 'Update Status'}
-                  </Button>
+                  {order.status === 'pending' && (
+                    <Button
+                      variant="primary"
+                      size="sm"
+                      onClick={() => handleStatusUpdate(order.id, 'in-progress')}
+                    >
+                      Accept Order
+                    </Button>
+                  )}
+                  {order.status === 'in-progress' && (
+                    <Button
+                      variant="success"
+                      size="sm"
+                      onClick={() => handleStatusUpdate(order.id, 'completed')}
+                    >
+                      Mark Completed
+                    </Button>
+                  )}
                 </td>
               </tr>
             ))}
