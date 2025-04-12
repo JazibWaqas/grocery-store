@@ -22,7 +22,6 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-<<<<<<< HEAD
     
     // Basic validation
     if (!formData.username || !formData.password) {
@@ -44,11 +43,6 @@ const Login = () => {
       default:
         navigate('/home');
     }
-=======
-    // Add login logic here
-    console.log('Login data:', formData);
-    navigate('/home'); // Navigate to home page after login
->>>>>>> a9e966861fea786c21465465b833de1bfe94549c
   };
 
   return (
