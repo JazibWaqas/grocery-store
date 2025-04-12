@@ -1,11 +1,12 @@
 import React from 'react';
 import { Navbar, Nav, Container, Badge } from 'react-bootstrap';
 import { FaShoppingCart, FaUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 const NavigationBar = () => {
   const { cartItems } = useCart();
+  const navigate = useNavigate();
   const itemsCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
